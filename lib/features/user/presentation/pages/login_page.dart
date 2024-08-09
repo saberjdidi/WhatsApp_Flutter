@@ -5,8 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../app/const/app_const.dart';
+import '../../../app/home/home_page.dart';
 import '../../../app/theme/style.dart';
+import '../cubit/auth/auth_cubit.dart';
 import '../cubit/credential/credential_cubit.dart';
+import 'inital_profile_submit_page.dart';
+import 'otp_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -30,8 +34,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return _bodyWidget();
-    /*
     return BlocConsumer<CredentialCubit, CredentialState>(
       listener: (context, credentialListenerState) {
         if(credentialListenerState is CredentialSuccess) {
@@ -64,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
         return _bodyWidget();
       },
     );
-    */
+
   }
 
   _bodyWidget() {
