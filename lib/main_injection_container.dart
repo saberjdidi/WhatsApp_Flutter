@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 
 import 'features/call/call_injection_container.dart';
+import 'features/chat/chat_injection_container.dart';
+import 'features/status/status_injection_container.dart';
 
 final sl = GetIt.instance;
 
