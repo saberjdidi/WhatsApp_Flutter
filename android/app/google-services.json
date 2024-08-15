@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "587807952921",
+    "project_id": "whatsapp-flutter-d499c",
+    "storage_bucket": "whatsapp-flutter-d499c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587807952921:android:b91090827fd9f85ae5da88",
+        "android_client_info": {
+          "package_name": "com.whatsappf.sj.whatsapp_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFGNNl3QYPtQazkNIQTEPooVANJB9YgjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

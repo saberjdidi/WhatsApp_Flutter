@@ -16,3 +16,27 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 video: https://www.youtube.com/watch?v=F8yAdYOXsak&t=646s
+
+## install Plugins :
+Clean Architecture Flutter
+Bloc : for State management BLoc
+
+## Firebase configuration
+1. Installer la CLI Firebase: npm install -g firebase-tools
+
+2. Prepare your workspace
+   log in : firebase login
+
+3. Install and run the FlutterFire CLI
+   cmd: dart pub global activate flutterfire_cli
+   cmd: flutterfire configure --project=whatsapp-flutter-d499c
+
+4. Initialize Firebase and add plugins
+   import 'package:firebase_core/firebase_core.dart';
+   import 'firebase_options.dart';
+
+   // ...
+   
+   await Firebase.initializeApp(
+   options: DefaultFirebaseOptions.currentPlatform,
+   );
