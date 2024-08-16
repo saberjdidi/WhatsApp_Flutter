@@ -220,9 +220,21 @@ class _SingleChatPageState extends State<SingleChatPage> {
             const SizedBox(
               width: 25,
             ),
-            const Icon(
-              Icons.call,
-              size: 22,
+            GestureDetector(
+              onTap: () {
+                ChatUtils.makeCall(context, callEntity: CallEntity(
+                  callerId: widget.message.senderUid,
+                  callerName: widget.message.senderName,
+                  callerProfileUrl: widget.message.senderProfile,
+                  receiverId: widget.message.recipientUid,
+                  receiverName: widget.message.recipientName,
+                  receiverProfileUrl: widget.message.recipientProfile,
+                ));
+              },
+              child: const Icon(
+                Icons.call,
+                size: 22,
+              ),
             ),
             const SizedBox(
               width: 25,
