@@ -40,3 +40,6 @@ Bloc : for State management BLoc
    await Firebase.initializeApp(
    options: DefaultFirebaseOptions.currentPlatform,
    );
+
+Agora Call video : https://www.agora.io/en/
+Configuration Agora : 11:00:00

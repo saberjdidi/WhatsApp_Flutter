@@ -22,7 +22,8 @@ Future<void> callInjectionContainer() async {
   sl.registerFactory<CallCubit>(() => CallCubit(
       endCallUseCase: sl.call(),
       getUserCallingUseCase: sl.call(),
-      makeCallUseCase: sl.call(), saveCallHistoryUseCase: sl.call(),
+      makeCallUseCase: sl.call(),
+      saveCallHistoryUseCase: sl.call(),
       updateCallHistoryStatusUseCase: sl.call()
   ));
 
