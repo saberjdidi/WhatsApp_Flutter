@@ -8,6 +8,7 @@ import '../../../storage/storage_provider.dart';
 import '../../call/presentation/cubits/my_call_history/my_call_history_cubit.dart';
 import '../../call/presentation/pages/calls_history_page.dart';
 import '../../chat/presentation/pages/chat_page.dart';
+import '../../notifications/usecases/get_device_token.dart';
 import '../../status/domain/entities/status_entity.dart';
 import '../../status/domain/entities/status_image_entity.dart';
 import '../../status/domain/usecases/get_my_status_future_usecase.dart';
@@ -40,6 +41,20 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   void initState() {
     BlocProvider.of<GetSingleUserCubit>(context).getSingleUser(uid: widget.uid);
     BlocProvider.of<MyCallHistoryCubit>(context).getMyCallHistory(uid: widget.uid);
+
+    ///Using for Firebase messaging
+    di.sl<GetDeviceTokenUseCase>().call().then((deviceTokenValue) {
+      print("deviceToken => $deviceTokenValue");
+      BlocProvider.of<UserCubit>(context)
+          .updateUser(
+          user: UserEntity(
+            uid: widget.uid,
+            token: deviceTokenValue,
+          ))
+          .then((value) {
+        print("update user completed");
+      });
+    });
 
     WidgetsBinding.instance.addObserver(this);
     _tabController = TabController(length: 3, vsync: this);

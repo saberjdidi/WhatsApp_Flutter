@@ -10,6 +10,7 @@ class UserModel extends UserEntity {
   final String? uid;
   final String? status;
   final String? profileUrl;
+  final String? token;
 
   const UserModel({
     this.username,
@@ -19,6 +20,7 @@ class UserModel extends UserEntity {
     this.uid,
     this.status,
     this.profileUrl,
+    this.token,
   }) : super(
       username: username,
       email: email,
@@ -26,7 +28,8 @@ class UserModel extends UserEntity {
       profileUrl: profileUrl,
       phoneNumber: phoneNumber,
       isOnline: isOnline,
-      status: status
+      status: status,
+    token: token
   );
 
   factory UserModel.fromSnapshot(DocumentSnapshot snapshot) {
@@ -39,7 +42,8 @@ class UserModel extends UserEntity {
         isOnline: snap['isOnline'],
         email: snap['email'],
         username: snap['username'],
-        uid: snap['uid']
+        uid: snap['uid'],
+        token: snap['token']
     );
   }
 
@@ -51,6 +55,7 @@ class UserModel extends UserEntity {
     "isOnline": isOnline,
     "email": email,
     "username": username,
-    "uid": uid
+    "uid": uid,
+    "token": token
   };
 }

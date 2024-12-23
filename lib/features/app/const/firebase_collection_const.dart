@@ -15,4 +15,5 @@ class FirebaseCollectionConst {
   // Call
   static const String call = "call";
   static const String callHistory = "callHistory";
+  static const String notifications = "notifications";
 }

@@ -36,7 +36,8 @@ class UserRemoteDataSourceImpl implements UserRemoteDataSource {
         phoneNumber: user.phoneNumber,
         username: user.username,
         profileUrl: user.profileUrl,
-        status: user.status
+        status: user.status,
+        token: ""
     ).toDocument();
 
 
@@ -133,6 +134,7 @@ class UserRemoteDataSourceImpl implements UserRemoteDataSource {
 
     if(user.username != "" && user.username != null) userInfo['username'] = user.username;
     if(user.status != "" && user.status != null) userInfo['status'] = user.status;
+    if(user.token != "" && user.token != null) userInfo['token'] = user.token;
 
     if(user.profileUrl != "" && user.profileUrl != null) userInfo['profileUrl'] = user.profileUrl;
 

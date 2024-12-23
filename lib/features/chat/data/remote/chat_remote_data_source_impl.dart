@@ -1,13 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uuid/uuid.dart';
-
+import 'package:whatsapp_flutter/features/notifications/repository/notification_repository.dart';
 import '../../../app/const/firebase_collection_const.dart';
 import '../../../app/const/message_type_const.dart';
+import '../../../notifications/entity/notification_entity.dart';
 import '../../domain/entities/chat_entity.dart';
 import '../../domain/entities/message_entity.dart';
 import '../models/chat_model.dart';
 import '../models/message_model.dart';
 import 'chat_remote_data_source.dart';
+import 'package:whatsapp_flutter/main_injection_container.dart' as di;
 
 class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
   final FirebaseFirestore fireStore;
@@ -50,6 +52,15 @@ class ChatRemoteDataSourceImpl implements ChatRemoteDataSource {
       recipientUid: chat.recipientUid,
       senderUid: chat.senderUid,
       totalUnReadMessages: chat.totalUnReadMessages,
+    ));
+
+    di.sl<NotificationRepository>().generateNotification(NotificationEntity(
+        uid: chat.senderUid,
+        otherUid: chat.recipientUid,
+        username: chat.senderName,
+        userProfile: chat.senderProfile,
+        //createdAt: Timestamp.now(),
+        description: recentTextMessage
     ));
 
   }

@@ -22,7 +22,8 @@ class _CallPageState extends State<CallPage> {
 
     BlocProvider.of<AgoraCubit>(context).initialize(
         channelName: widget.callEntity.callId!,
-        tokenUrl: "http://192.168.244.3:3000/get_token?channelName=${widget.callEntity.callId}"
+        tokenUrl: "http://10.0.214.136:3000/get_token?channelName=${widget.callEntity.callId}"
+        //tokenUrl: "http://localhost:3000/get_token?channelName=${widget.callEntity.callId}"
     );
 
     super.initState();
