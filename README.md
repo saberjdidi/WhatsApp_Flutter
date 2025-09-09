@@ -1,4 +1,4 @@
-# whatsapp_flutter
+# whatsapp flutter using firebase
 
 WhatsApp Flutter Project with Clean Architecture
 
